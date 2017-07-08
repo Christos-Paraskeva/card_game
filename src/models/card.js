@@ -1,5 +1,7 @@
 "strict mode";
 
-function Card() {
-
+function Card(value, name, suit) {
+  this.value = value;
+  this.name = name;
+  this.suit = suit;
 }

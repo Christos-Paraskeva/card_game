@@ -5,17 +5,17 @@ describe('Player', function() {
     expect(player).toBeDefined();
   });
 
-  describe('default values on initialization', function() {
+  describe('is initialized with', function() {
 
-    it("has a name", function(){
+    it("a name", function(){
       expect(player.name).toEqual('Test Name');
     });
 
-    it("has an id", function(){
+    it("an id", function(){
       expect(player.id).toEqual(1);
     });
 
-    it("has an empty array for currently held cards", function(){
+    it("an empty array for currently held cards", function(){
       expect(player.cards_held).toEqual([]);
     });
   });
