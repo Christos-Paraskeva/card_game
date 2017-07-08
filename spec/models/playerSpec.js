@@ -19,4 +19,11 @@ describe('Player', function() {
       expect(player.held_cards).toEqual([]);
     });
   });
+
+  describe('can check for', function() {
+
+    it("current player's name", function(){
+      expect(player.getName()).toEqual('Test Name');
+    });
+  });
 });
