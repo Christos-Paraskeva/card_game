@@ -3,5 +3,16 @@ describe('Player', function() {
 
   it("exists", function(){
     expect(player).toBeDefined();
- });
+  });
+
+  describe('default values on initialization', function() {
+
+    it("has a name", function(){
+      expect(player.name).toEqual('Test Name');
+    });
+
+    it("has an id", function(){
+      expect(player.id).toEqual(1);
+    });
+  });
 });
