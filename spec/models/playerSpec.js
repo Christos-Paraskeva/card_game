@@ -16,7 +16,7 @@ describe('Player', function() {
     });
 
     it("has an empty array for currently held cards", function(){
-      expect(player.held_cards).toEqual([]);
+      expect(player.cards_held).toEqual([]);
     });
   });
 
@@ -24,6 +24,14 @@ describe('Player', function() {
 
     it("current player's name", function(){
       expect(player.getName()).toEqual('Test Name');
+    });
+
+    it("current player's id", function(){
+      expect(player.getId()).toEqual(1);
+    });
+
+    it("current player's held cards", function(){
+      expect(player.showCards()).toEqual([]);
     });
   });
 });
