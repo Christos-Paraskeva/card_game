@@ -14,5 +14,16 @@ describe('Deck', function() {
     it("an array with all the different suits for the cards", function(){
       expect(deck.suits).toEqual(suits());
     });
+
+    it("an empty array of cards", function(){
+      expect(deck.cards).toEqual([]);
+    });
+  });
+
+  describe('when creating a deck', function() {
+
+    it("the desired sequence of cards is correct", function() {
+      expect(formatArrayStructure(deck.createDeck())).toEqual(formatArrayStructure(correctSequenceDeck()));
+    });
   });
 });
