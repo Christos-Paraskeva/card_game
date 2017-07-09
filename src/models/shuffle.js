@@ -1,5 +1,5 @@
 "strict mode";
 
-function Shuffle() {
-  
+function Shuffle(currentDeck) {
+  this.currentDeck = currentDeck;
 }

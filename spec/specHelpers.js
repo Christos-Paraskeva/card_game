@@ -6,12 +6,17 @@ var suits = function() {
   return ['Hearts','Diamonds','Spades','Clubs'];
 };
 
-var formatArrayStructure = function(deck){
+var formatArrayStructure = function(deck) {
   var formattedDeck = [];
   for (i = 0; i < deck.length; i++) {
   formattedDeck.push([deck[i].name, deck[i].suit, deck[i].value]);
 }
 return formattedDeck;
+};
+
+var minimizedTestDeck = function() {
+  return [ Object({ value: 1, name: 'Ace', suit: 'Hearts' }), Object({ value: 2, name: 'Two', suit: 'Hearts' }),
+  Object({ value: 3, name: 'Three', suit: 'Hearts' }), Object({ value: 4, name: 'Four', suit: 'Hearts' }) ];
 };
 
 var correctSequenceDeck = function() {
