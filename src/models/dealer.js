@@ -1,5 +1,6 @@
 "strict mode";
 
-function Dealer(currentPlayers) {
+function Dealer(currentPlayers, deck) {
   this.currentPlayers = currentPlayers;
+  this.deck = deck;
 }
