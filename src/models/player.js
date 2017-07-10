@@ -3,7 +3,7 @@
 function Player(name, id) {
   this.id = id;
   this.name = name;
-  this.cards_held = [];
+  this.cardsHeld = [];
 }
 
 Player.prototype = {
@@ -14,6 +14,6 @@ Player.prototype = {
     return this.id;
   },
   showCards: function() {
-    return this.cards_held;
+    return this.cardsHeld;
   }
 };
