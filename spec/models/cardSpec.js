@@ -1,5 +1,5 @@
 describe('Card', function() {
-  var card = new Card(1, 'Ace', 'Heart');
+  var card = new Card(1, 'Ace', 'Heart', 1);
 
   it("exists", function(){
     expect(card).toBeDefined();
@@ -17,6 +17,10 @@ describe('Card', function() {
 
     it("a suit", function(){
       expect(card.suit).toEqual('Heart');
+    });
+
+    it("an original deck position", function(){
+      expect(card.originalDeckPosition).toEqual(1);
     });
   });
 });

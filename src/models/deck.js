@@ -8,9 +8,12 @@ function Deck() {
 
 Deck.prototype = {
   createDeck: function () {
+    positionInDeck = 1;
+
     for( var s = 0; s < this.suits.length; s++ ) {
       for( var v = 0; v < this.names.length; v++ ) {
-        this.cards.push( new Card( v+1, this.names[v], this.suits[s] ) );
+        this.cards.push( new Card( v+1, this.names[v], this.suits[s], positionInDeck ) );
+        positionInDeck += 1;
         }
       }
 
