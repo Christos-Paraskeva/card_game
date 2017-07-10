@@ -3,3 +3,8 @@
 function Shuffle(currentDeck) {
   this.currentDeck = currentDeck;
 }
+
+Shuffle.prototype = {
+  defaultShuffle: function () {
+  }
+};
