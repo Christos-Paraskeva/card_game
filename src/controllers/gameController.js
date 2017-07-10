@@ -1,0 +1,4 @@
+"strict mode";
+
+function GameController() {
+}
