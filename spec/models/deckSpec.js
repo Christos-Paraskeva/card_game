@@ -50,4 +50,15 @@ describe('Deck', function() {
       expect(formattedDeck.length).toEqual(formatArrayStructure(correctSequenceDeck()).length);
     });
   });
+
+  describe('edge cases', function() {
+
+    beforeEach(function() {
+      deck.cards = [];
+    });
+
+    it('must specify type of deck', function() {
+      expect(formatArrayStructure(deck.createDeck())).toEqual([]);
+    });
+  });
 });
