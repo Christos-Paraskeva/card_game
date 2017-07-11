@@ -1,13 +1,15 @@
 "strict mode";
 
-function Dealer(currentPlayers, deck) {
-  this.currentPlayers = currentPlayers;
-  this.deck = deck;
+function Dealer() {
+  this.currentPlayers = [];
+  this.deck = [];
 }
 
 Dealer.prototype = {
-  dealCards: function (howMany) {
-    for(var i=0; i < howMany; i++) {
+  dealCards: function (howManyCards, currentPlayers, deck) {
+    this.currentPlayers = currentPlayers;
+    this.deck = deck;
+    for(var i=0; i < howManyCards; i++) {
       for(var p=0; p < this.currentPlayers.length; p++) {
         this.currentPlayers[p].cardsHeld.push(this.deck.splice(0, 1));
       }

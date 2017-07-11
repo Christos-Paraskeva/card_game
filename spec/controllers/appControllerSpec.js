@@ -1,4 +1,7 @@
-function PlayerDouble() {
+function PlayerDouble(id, name) {
+  this.id = id;
+  this.name = name;
+  this.cardsHeld = [];
 }
 
 PlayerDouble.prototype = {
@@ -7,12 +10,30 @@ PlayerDouble.prototype = {
   }
 };
 
+var currentPlayersDouble = [];
+
+currentPlayersDouble.push(new PlayerDouble(1, 'Player1'),
+  new PlayerDouble(2, 'Player2'),
+  new PlayerDouble(3, 'Player3'),
+  new PlayerDouble(4, 'Player4'));
+
 function DeckDouble() {
-  this.cards = ['card 1', 'card 2'];
+  this.cards = ['card 1', 'card 2', 'card 3', 'card 4'];
 }
 
 DeckDouble.prototype = {
   createDeck: function () {
+    return this.cards;
+  }
+};
+
+function DealerDouble() {
+  this.currentPlayers = [];
+  this.deck = [];
+}
+
+DealerDouble.prototype = {
+  dealCards: function () {
     return this.cards;
   }
 };
@@ -29,7 +50,7 @@ describe('AppController', function() {
 
   describe('is initialized with', function() {
 
-    it("an emptry array for current dock", function() {
+    it("an empty array for current dock", function() {
       expect(appController.currentDeck).toEqual([]);
     });
 
@@ -44,37 +65,51 @@ describe('AppController', function() {
     it("an instance of 'Deck'", function(){
       expect(appController.deck instanceof DeckDouble).toBe(true);
     });
+  });
 
-    describe('when adding a player', function() {
+  describe('when adding a player', function() {
 
-      afterEach(function(){
-        appController.currentPlayers = [];
-      });
+    afterEach(function(){
+      appController.currentPlayers = [];
+    });
 
-      it("calls the Player class to create a new player", function() {
-        var createPlayerSpy = spyOn(appController.player, 'createPlayer').and.callThrough();
-        appController.addPlayer();
-        expect(createPlayerSpy).toHaveBeenCalled();
-      });
+    it("calls the Player class to create a new player", function() {
+      var createPlayerSpy = spyOn(appController.player, 'createPlayer').and.callThrough();
+      appController.addPlayer();
+      expect(createPlayerSpy).toHaveBeenCalled();
+    });
 
-      it("adds the new player to the currentPlayers array", function() {
-        appController.addPlayer();
-        expect(appController.currentPlayers.length).toEqual(1);
-      });
+    it("adds the new player to the currentPlayers array", function() {
+      appController.addPlayer();
+      expect(appController.currentPlayers.length).toEqual(1);
     });
   });
 
-  it("can show how many current players there are", function(){
-    appController.addPlayer();
-    appController.addPlayer();
-    expect(appController.currentPlayerCount()).toEqual(2);
+  describe('when dealing cards out', function() {
+
+    beforeEach(function(){
+      appController.currentPlayers.push(new PlayerDouble(1, 'Player1'),
+        new PlayerDouble(2, 'Player2'),
+        new PlayerDouble(3, 'Player3'),
+        new PlayerDouble(4, 'Player4'));
+    });
+
+    afterEach(function(){
+      appController.currentPlayers = [];
+    });
+
+    it("calls the Dealer class to deal out the cards", function() {
+      var dealCardsSpy = spyOn(appController.dealer, 'dealCards').and.callThrough();
+      appController.dealCardToPlayers(1, currentPlayersDouble, DeckDouble());
+      expect(dealCardsSpy).toHaveBeenCalled();
+    });
   });
 
   describe('when creating a new deck', function() {
 
     it("adds the new deck to the currentDeck array", function() {
-      console.log(appController.createNewDeck('standard'));
-      expect(appController.currentDeck.length).toEqual(2);
+      appController.createNewDeck('standard');
+      expect(appController.currentDeck.length).toEqual(4);
     });
 
     it("calls the Deck class to create a new standard deck", function() {
@@ -84,7 +119,14 @@ describe('AppController', function() {
     });
   });
 
-  // it("can show the current deck of cards in use", function(){
-  //   expect(appController.createNewDeck('standard')).toEqual([])
-  // });
+  it("can show how many current players there are", function(){
+    appController.addPlayer();
+    appController.addPlayer();
+    expect(appController.currentPlayerCount()).toEqual(2);
+  });
+
+  it("can show the current deck of cards in use", function(){
+    expect(appController.showCurrentDeck()).toEqual(['card 1', 'card 2', 'card 3', 'card 4'])
+  });
+
 });

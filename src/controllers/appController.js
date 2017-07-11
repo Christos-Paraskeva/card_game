@@ -1,10 +1,11 @@
 "strict mode";
 
-function AppController(player = new Player(), deck = new Deck()) {
+function AppController(player = new Player(), deck = new Deck(), dealer = new Dealer()) {
   this.currentDeck = [];
   this.currentPlayers = [];
   this.player = player;
   this.deck = deck;
+  this.dealer = dealer;
 }
 
 AppController.prototype = {
@@ -17,6 +18,12 @@ AppController.prototype = {
     return this.currentPlayers.length;
   },
   createNewDeck: function(type) {
-    return this.currentDeck = this.deck.createDeck(type);
+    this.currentDeck = this.deck.createDeck(type);
+  },
+  showCurrentDeck: function() {
+    return this.currentDeck;
+  },
+  dealCardToPlayers: function(howManyCards, currentPlayers = this.currentPlayers, currentDeck = this.currentDeck) {
+    this.dealer.dealCards(howManyCards, currentPlayers, currentDeck);
   }
 };
