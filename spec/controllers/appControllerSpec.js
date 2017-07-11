@@ -1,5 +1,19 @@
+function PlayerDouble(id, name) {
+  this.id = id;
+  this.name = name;
+  this.cardsHeld = [];
+}
+
+PlayerDouble.prototype = {
+  createPlayer: function(name, id) {
+    return new Player(name, id);
+  }
+};
+
+var playerDouble = new PlayerDouble();
+
 describe('AppController', function() {
-  var appController = new AppController();
+  var appController = new AppController(playerDouble);
 
   it("exists", function(){
     expect(appController).toBeDefined();
@@ -16,7 +30,7 @@ describe('AppController', function() {
     });
 
     it("an instance of 'Player'", function(){
-      expect(appController.player instanceof Player).toBe(true);
+      expect(appController.player instanceof PlayerDouble).toBe(true);
     });
 
     it("an instance of 'Deck'", function(){
@@ -60,7 +74,9 @@ describe('AppController', function() {
       appController.createNewDeck('standard');
       expect(createDeckSpy).toHaveBeenCalled();
     });
-
-
   });
+
+  // it("can show the current deck of cards in use", function(){
+  //   expect(appController.createNewDeck('standard')).toEqual([])
+  // });
 });

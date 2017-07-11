@@ -17,6 +17,6 @@ AppController.prototype = {
     return this.currentPlayers.length;
   },
   createNewDeck: function(type) {
-    this.currentDeck = this.deck.createDeck(type);
+    return this.currentDeck = this.deck.createDeck(type);
   }
 };
