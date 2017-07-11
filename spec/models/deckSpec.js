@@ -23,7 +23,7 @@ describe('Deck', function() {
   describe('when creating a deck', function() {
 
     beforeEach(function() {
-      formattedDeck = formatArrayStructure(deck.createDeck());
+      formattedDeck = formatArrayStructure(deck.createDeck('standard'));
     });
 
     it('card name is defined', function() {
@@ -44,7 +44,10 @@ describe('Deck', function() {
 
     it("the desired sequence of cards is in correct order", function() {
       expect(formattedDeck).toEqual(formatArrayStructure(correctSequenceDeck()));
+    });
 
+    it("correct number of cards are created", function(){
+      expect(formattedDeck.length).toEqual(formatArrayStructure(correctSequenceDeck()).length);
     });
   });
 });

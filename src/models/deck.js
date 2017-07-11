@@ -7,8 +7,10 @@ function Deck() {
 }
 
 Deck.prototype = {
-  createDeck: function () {
-    positionInDeck = 1;
+  createDeck: function (type) {
+
+  if (type === 'standard') {
+    var positionInDeck = 1;
 
     for( var s = 0; s < this.suits.length; s++ ) {
       for( var v = 0; v < this.names.length; v++ ) {
@@ -16,7 +18,7 @@ Deck.prototype = {
         positionInDeck += 1;
         }
       }
-
+    }
     return this.cards;
   }
 };
