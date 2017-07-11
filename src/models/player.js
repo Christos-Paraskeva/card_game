@@ -15,5 +15,8 @@ Player.prototype = {
   },
   showCards: function() {
     return this.cardsHeld;
+  },
+  createPlayer: function(name, id) {
+    return new Player(name, id);
   }
 };

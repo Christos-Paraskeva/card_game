@@ -34,4 +34,9 @@ describe('Player', function() {
       expect(player.showCards()).toEqual([]);
     });
   });
+
+  it("can create a new player", function(){
+    player.createPlayer('Player Name');
+    expect(player instanceof Player).toBe(true);
+  });
 });
