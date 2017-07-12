@@ -23,8 +23,6 @@ The init.js is loaded when the index.html page is opened, and it recreates the f
 - The deck that, is in sequence, is shuffled so that no two cards are still in sequence.
 - Seven cards are then dealt to each player (one card to the each player, then a second card to each player, and so on)
 
-![ScreenShot](https://image.ibb.co/mV7Xhv/20170712_220101.jpg)
-
 To clear this and start fresh, create a new instance of the AppController:
 
 ```
@@ -89,7 +87,7 @@ I would like to be able to specify how many cards are to be dealt to each player
 
 Afterwards, I added some extra user stories which I felt would lend itself to a more functional and modular / extensible application.  Below is a basic sketch of how I wanted the application to be designed.
 
-insert picture here
+![ScreenShot](https://image.ibb.co/mV7Xhv/20170712_220101.jpg)
 
 I debated how many different classes seemed logical for the different components of the application, and I knew early on that I wanted to keep these models separate from each other.  I eventually decided that it made more sense for me to follow an MVC type structure, where the controller would be responsible for delegating / calling upon the models to carry out the task and deal with the more complex logic.  Given that this was designed to be a command line application, I have no intention to implement the ‘view’ component of the MVC structure.  However, I feel designing the application in this way, would allow a front-end to be added in the future without much fuss.
 
