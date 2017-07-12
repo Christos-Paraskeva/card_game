@@ -23,7 +23,7 @@ AppController.prototype = {
   showCurrentDeck: function() {
     return this.currentDeck;
   },
-  dealCardToPlayers: function(howManyCards, currentPlayers = this.currentPlayers, currentDeck = this.currentDeck) {
-    this.dealer.dealCards(howManyCards, currentPlayers, currentDeck);
+  dealCardToPlayers: function(howManyCards) {
+    this.dealer.dealCards(howManyCards, this.currentPlayers, this.currentDeck);
   }
 };

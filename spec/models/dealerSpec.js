@@ -11,8 +11,19 @@ currentPlayersDouble.push(new PlayerDouble(1, 'Player1'),
   new PlayerDouble(3, 'Player3'),
   new PlayerDouble(4, 'Player4'));
 
+function ShuffleDouble() {
+}
+
+ShuffleDouble.prototype = {
+  defaultShuffle: function (deck) {
+    deck.push('test');
+  },
+};
+
+var shuffleDouble = new ShuffleDouble();
+
 describe('Dealer', function() {
-  var dealer = new Dealer();
+  var dealer = new Dealer(shuffleDouble);
 
   it("exists", function(){
     expect(dealer).toBeDefined();
@@ -24,12 +35,25 @@ describe('Dealer', function() {
       expect(dealer.currentPlayers).toBeDefined();
     });
 
-    it("an empty array for deck", function() {
-      expect(dealer.deck).toBeDefined();
+    it("an empty array for current deck", function() {
+      expect(dealer.currentDeck).toBeDefined();
+    });
+
+    it("an instance of 'Shuffle'", function(){
+      expect(dealer.shuffle instanceof ShuffleDouble).toBe(true);
     });
   });
 
-  describe('when dealing', function() {
+  describe('when shuffling the cards', function() {
+
+    it("calls the shuffle class and gives it the cards", function() {
+      var shuffleDeckSpy = spyOn(dealer.shuffle, 'defaultShuffle').and.callThrough();
+      dealer.shuffleTheDeck(correctSequenceDeck());
+      expect(shuffleDeckSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe('when dealing the cards', function() {
 
     it("gives each player the correct amount of cards specified", function() {
       dealer.dealCards(7, currentPlayersDouble, correctSequenceDeck());

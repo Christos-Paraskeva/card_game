@@ -1,28 +1,26 @@
 "strict mode";
 
-function Shuffle(currentDeck) {
-  this.currentDeck = currentDeck;
+function Shuffle() {
   this.correctShuffle = false;
 }
 
 Shuffle.prototype = {
-
-  defaultShuffle: function () {
+  defaultShuffle: function (deck) {
     var i = 0;
     var j = 0;
     var temp = null;
 
     while (this.correctShuffle === false) {
 
-      for (i = this.currentDeck.length - 1; i > 0; i -= 1) {
+      for (i = deck.length - 1; i > 0; i -= 1) {
         j = Math.floor(Math.random() * (i + 1));
-        temp = this.currentDeck [i];
-        this.currentDeck[i] = this.currentDeck[j];
-        this.currentDeck[j] = temp;
+        temp = deck [i];
+        deck[i] = deck[j];
+        deck[j] = temp;
       }
-      this._validateCorrectShuffle(this.currentDeck);
+      this._validateCorrectShuffle(deck);
     }
-  return this.currentDeck;
+  return deck;
   },
 
   _validateCorrectShuffle: function (deck) {
@@ -39,17 +37,3 @@ Shuffle.prototype = {
     }
   }
 };
-
-// _validateCorrectShuffle: function (deck) {
-//   var confirmedCardSequence = false;
-//
-//   for (i=0; i < deck.length; i++) {
-//     if ((i < deck.length - 1) && (deck[i].originalDeckPosition - deck[i+1].originalDeckPosition) === -1) {
-//       confirmedCardSequence = true;
-//     }
-//   }
-//
-//   if (confirmedCardSequence === false) {
-//     this.correctShuffle = true;
-//   }
-// }
