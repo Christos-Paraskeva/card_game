@@ -8,7 +8,7 @@ function Deck() {
 
 Deck.prototype = {
   createDeck: function (type) {
-
+    
   if (type === 'standard') {
     var positionInDeck = 1;
 

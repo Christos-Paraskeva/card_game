@@ -10,12 +10,15 @@ Player.prototype = {
   getName: function() {
     return this.name;
   },
+
   getId: function() {
     return this.id;
   },
+
   showCards: function() {
     return this.cardsHeld;
   },
+  
   createPlayer: function(name, id) {
     return new Player(name, id);
   }

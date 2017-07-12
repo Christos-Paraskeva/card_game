@@ -7,10 +7,6 @@ describe('Shuffle', function() {
   });
 
   describe('is initialized with', function() {
-    // it("the current deck of cards", function(){
-    //   expect(shuffle.currentDeck).toEqual(testDeck);
-    // });
-
     it("variable confirming whether the shuffle has been performed correctly - set to false by default", function(){
       expect(shuffle.correctShuffle).toEqual(false);
     });

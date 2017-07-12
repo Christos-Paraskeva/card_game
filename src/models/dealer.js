@@ -2,17 +2,15 @@
 
 function Dealer(shuffle = new Shuffle()) {
   this.currentPlayers = [];
-  this.currentDeck = [];
   this.shuffle = shuffle;
 }
 
 Dealer.prototype = {
-
   shuffleTheDeck: function (deck) {
-    this.shuffle.defaultShuffle(deck);
+     this.shuffle.defaultShuffle(deck);
   },
-
-  dealCards: function (howManyCards, currentPlayers, deck) {
+  
+  dealTheCards: function (howManyCards, currentPlayers, deck) {
     this.currentPlayers = currentPlayers;
     this.currentDeck = deck;
     for(var i=0; i < howManyCards; i++) {

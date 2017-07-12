@@ -29,19 +29,23 @@ DeckDouble.prototype = {
 
 function DealerDouble() {
   this.currentPlayers = [];
-  this.currentDeck = [];
 }
 
 DealerDouble.prototype = {
-  dealCards: function (howManyCards, players, deck) {
+  dealTheCards: function (howManyCards, players, deck) {
     this.currentPlayers = players;
-    this.currentDeck = deck;
+  },
+  shuffleTheDeck: function (deck) {
+     return 'test deck received';
   }
 };
 
 var playerDouble = new PlayerDouble();
 var deckDouble = new DeckDouble();
 var dealerDouble = new DealerDouble();
+
+var testDeck = deckDouble.createDeck();
+
 
 describe('AppController', function() {
   var appController = new AppController(playerDouble, deckDouble, dealerDouble);
@@ -91,11 +95,29 @@ describe('AppController', function() {
     });
   });
 
+  describe('when shuffling cards', function() {
+
+    beforeEach(function(){
+      appController.currentDeck = minimizedTestDeck();
+    });
+
+    it("calls the Dealer class to deal with it", function() {
+      var shuffleTheDeckSpy = spyOn(appController.dealer, 'shuffleTheDeck').and.callThrough();
+      appController.shuffleCards(minimizedTestDeck());
+      expect(shuffleTheDeckSpy).toHaveBeenCalled();
+    });
+
+    it("gives the Dealer the current deck", function() {
+      appController.shuffleCards();
+      expect(appController.dealer.shuffleTheDeck()).toEqual('test deck received');
+    });
+  });
+
   describe('when dealing cards out', function() {
 
     beforeEach(function(){
       appController.currentPlayers = currentPlayersDouble;
-      appController.currentDeck = appController.deck.createDeck();
+      appController.currentDeck = testDeck;
     });
 
     afterEach(function(){
@@ -103,20 +125,16 @@ describe('AppController', function() {
     });
 
     it("calls the Dealer class to deal out the cards and tells it how many cards each", function() {
-      var dealCardsToPlayersSpy = spyOn(appController.dealer, 'dealCards').and.callThrough();
-      appController.dealCardToPlayers(1);
+      var dealCardsToPlayersSpy = spyOn(appController.dealer, 'dealTheCards').and.callThrough();
+      appController.dealCardsToPlayers(1);
       expect(dealCardsToPlayersSpy).toHaveBeenCalled();
     });
 
     it("gives the Dealer the current players", function() {
-      appController.dealCardToPlayers(1);
+      appController.dealCardsToPlayers(1);
       expect(appController.dealer.currentPlayers).toEqual(currentPlayersDouble);
     });
 
-    it("gives the Dealer the current deck", function() {
-      appController.dealCardToPlayers(1);
-      expect(appController.dealer.currentDeck).toEqual(appController.currentDeck);
-    });
   });
 
   describe('when creating a new deck', function() {

@@ -35,10 +35,6 @@ describe('Dealer', function() {
       expect(dealer.currentPlayers).toBeDefined();
     });
 
-    it("an empty array for current deck", function() {
-      expect(dealer.currentDeck).toBeDefined();
-    });
-
     it("an instance of 'Shuffle'", function(){
       expect(dealer.shuffle instanceof ShuffleDouble).toBe(true);
     });
@@ -56,7 +52,7 @@ describe('Dealer', function() {
   describe('when dealing the cards', function() {
 
     it("gives each player the correct amount of cards specified", function() {
-      dealer.dealCards(7, currentPlayersDouble, correctSequenceDeck());
+      dealer.dealTheCards(7, currentPlayersDouble, correctSequenceDeck());
       expect(dealer.currentPlayers[0].cardsHeld.length).toEqual(7);
       expect(dealer.currentPlayers[1].cardsHeld.length).toEqual(7);
       expect(dealer.currentPlayers[2].cardsHeld.length).toEqual(7);
