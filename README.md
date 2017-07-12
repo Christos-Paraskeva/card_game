@@ -102,7 +102,7 @@ Now that I was happy with how the application would be structured, I began by se
 
 Testing my loop created a correct set of cards was not something I could do without separating any reliability on the Card class.  The createDeck method returned an array of Card objects, which I could not find a way of testing directly.  I felt the most sensible solution was to create an algorithm within a specHelper file that would convert the array of objects to a simple array or arrays containing values, which can then easily be compared to another converted array to determine if the order is correct.  The reason I have listed this as a struggle as I’m still not completely satisfied this is the correct way of going about testing something like this.
 
-### - Implementing the shuffling:
+- ### Implementing the shuffling:
 
 Spent some time thinking about how to implement the shuffling.  Implemented an algorithm based on the Fisher–Yates Shuffle, which, starting from the back, goes through each index and swaps it with a random number from a pool that gets smaller on the subsequent loops.  Making sure no two cards were still in sequence was where I spent some time trying a couple of different solutions.   
 
