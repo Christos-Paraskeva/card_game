@@ -126,7 +126,7 @@ describe('AppController', function() {
   });
 
   it("can show the current deck of cards in use", function(){
-    expect(appController.showCurrentDeck()).toEqual(['card 1', 'card 2', 'card 3', 'card 4'])
+    expect(appController.showCurrentDeck()).toEqual(['card 1', 'card 2', 'card 3', 'card 4']);
   });
 
 });

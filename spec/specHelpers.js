@@ -21,8 +21,8 @@ var formatArrayStructure = function(deck) {
 };
 
 var minimizedTestDeck = function() {
-  return [ Object({ value: 1, name: 'Ace', suit: 'Hearts' }), Object({ value: 2, name: 'Two', suit: 'Hearts' }),
-  Object({ value: 3, name: 'Three', suit: 'Hearts' }), Object({ value: 4, name: 'Four', suit: 'Hearts' }) ];
+  return [ Object({ value: 1, name: 'Ace', suit: 'Hearts', originalDeckPosition: 1 }), Object({ value: 2, name: 'Two', suit: 'Hearts', originalDeckPosition: 2 }),
+  Object({ value: 3, name: 'Three', suit: 'Hearts', originalDeckPosition: 3 }) ];
 };
 
 var correctSequenceDeck = function() {
