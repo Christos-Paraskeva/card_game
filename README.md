@@ -91,13 +91,9 @@ Afterwards, I added some extra user stories which I felt would lend itself to a 
 
 insert picture here
 
-I was debating how many different classes seemed logical for the different components of the application, and I knew early on that I wanted to keep these models separate from each other.  I eventually decided that it made more sense for me to follow an MVC type structure, where the controller would be responsible for delegating / calling upon the models to carry out the task and deal with the more complex logic.  Given that this was designed to be a command line application, I have no intention to implement the ‘view’ component of the MVC structure.  However, I feel designing the application in this way, would allow a front-end to be added in the future without much fuss.
+I debated how many different classes seemed logical for the different components of the application, and I knew early on that I wanted to keep these models separate from each other.  I eventually decided that it made more sense for me to follow an MVC type structure, where the controller would be responsible for delegating / calling upon the models to carry out the task and deal with the more complex logic.  Given that this was designed to be a command line application, I have no intention to implement the ‘view’ component of the MVC structure.  However, I feel designing the application in this way, would allow a front-end to be added in the future without much fuss.
 
-Debating how many different classes seemed logical for the different components of the game.  I didn’t want to expose too much to any particular model, and eventually decided that it made more sense for me to follow an MVC structure where the controller would be responsible for delegating simple tasks to the models, which then dealt with the more complex logic.  With this structure, I feel that each model had a simple / single responsibility, and my aim was to make sure that nothing, apart from the Controller, depended too much on different components of the application, allowing for better extensibility if something was going to be changed or added in the future.
-
-Now that I was happy with how the application would be structured, I began setting up the project and started coding.
-
-I began by setting up the Jasmine testing suite, and then writing a small test to check for whether the Player class existed.  This small test failed, and I then moved on to making it pass.  This is the same approach I used throughout the whole project.
+Now that I was happy with how the application would be structured, I began by setting up the Jasmine testing suite, and then writing a small test to check for whether the Player class existed.  This small test failed, and I then moved on to making it pass, before then moving onto the next test.  This is the same approach I used throughout the whole project.
 
 ## Struggles & Successes
 
