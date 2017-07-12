@@ -58,5 +58,11 @@ describe('Dealer', function() {
       expect(dealer.currentPlayers[2].cardsHeld.length).toEqual(7);
       expect(dealer.currentPlayers[3].cardsHeld.length).toEqual(7);
     });
+
+    describe("edge cases", function(){
+      it("throws an error when there are not enough cards to be dealt to the players", function() {
+        expect(dealer.dealTheCards.bind(null, 14, currentPlayersDouble, correctSequenceDeck())).toThrow(new Error("Cannot deal: not enough cards or players"));
+      });
+    });
   });
 });

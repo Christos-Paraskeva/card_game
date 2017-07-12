@@ -3,7 +3,7 @@ var cardNames = function() {
 };
 
 var suits = function() {
-  return ['Hearts','Diamonds','Spades','Clubs'];
+  return ['Hearts','Clubs','Spades','Diamonds'];
 };
 
 var formatArrayStructure = function(deck) {
@@ -40,19 +40,19 @@ var correctSequenceDeck = function() {
   Object ({ value: 11, name: 'Jack', suit: 'Hearts', originalDeckPosition: 11 }),
   Object ({ value: 12, name: 'Queen', suit: 'Hearts', originalDeckPosition: 12 }),
   Object ({ value: 13, name: 'King', suit: 'Hearts', originalDeckPosition: 13 }),
-  Object ({ value: 1, name: 'Ace', suit: 'Diamonds', originalDeckPosition: 14 }),
-  Object ({ value: 2, name: 'Two', suit: 'Diamonds', originalDeckPosition: 15 }),
-  Object ({ value: 3, name: 'Three', suit: 'Diamonds', originalDeckPosition: 16 }),
-  Object ({ value: 4, name: 'Four', suit: 'Diamonds', originalDeckPosition: 17 }),
-  Object ({ value: 5, name: 'Five', suit: 'Diamonds', originalDeckPosition: 18 }),
-  Object ({ value: 6, name: 'Six', suit: 'Diamonds', originalDeckPosition: 19 }),
-  Object ({ value: 7, name: 'Seven', suit: 'Diamonds', originalDeckPosition: 20 }),
-  Object ({ value: 8, name: 'Eight', suit: 'Diamonds', originalDeckPosition: 21 }),
-  Object ({ value: 9, name: 'Nine', suit: 'Diamonds', originalDeckPosition: 22 }),
-  Object ({ value: 10, name: 'Ten', suit: 'Diamonds', originalDeckPosition: 23 }),
-  Object ({ value: 11, name: 'Jack', suit: 'Diamonds', originalDeckPosition: 24 }),
-  Object ({ value: 12, name: 'Queen', suit: 'Diamonds', originalDeckPosition: 25 }),
-  Object ({ value: 13, name: 'King', suit: 'Diamonds', originalDeckPosition: 26 }),
+  Object ({ value: 1, name: 'Ace', suit: 'Clubs', originalDeckPosition: 14 }),
+  Object ({ value: 2, name: 'Two', suit: 'Clubs', originalDeckPosition: 15 }),
+  Object ({ value: 3, name: 'Three', suit: 'Clubs', originalDeckPosition: 16 }),
+  Object ({ value: 4, name: 'Four', suit: 'Clubs', originalDeckPosition: 17 }),
+  Object ({ value: 5, name: 'Five', suit: 'Clubs', originalDeckPosition: 18 }),
+  Object ({ value: 6, name: 'Six', suit: 'Clubs', originalDeckPosition: 19 }),
+  Object ({ value: 7, name: 'Seven', suit: 'Clubs', originalDeckPosition: 20 }),
+  Object ({ value: 8, name: 'Eight', suit: 'Clubs', originalDeckPosition: 21 }),
+  Object ({ value: 9, name: 'Nine', suit: 'Clubs', originalDeckPosition: 22 }),
+  Object ({ value: 10, name: 'Ten', suit: 'Clubs', originalDeckPosition: 23 }),
+  Object ({ value: 11, name: 'Jack', suit: 'Clubs', originalDeckPosition: 24 }),
+  Object ({ value: 12, name: 'Queen', suit: 'Clubs', originalDeckPosition: 25 }),
+  Object ({ value: 13, name: 'King', suit: 'Clubs', originalDeckPosition: 26 }),
   Object ({ value: 1, name: 'Ace', suit: 'Spades', originalDeckPosition: 27 }),
   Object ({ value: 2, name: 'Two', suit: 'Spades', originalDeckPosition: 28 }),
   Object ({ value: 3, name: 'Three', suit: 'Spades', originalDeckPosition: 29 }),
@@ -66,18 +66,18 @@ var correctSequenceDeck = function() {
   Object ({ value: 11, name: 'Jack', suit: 'Spades', originalDeckPosition: 37 }),
   Object ({ value: 12, name: 'Queen', suit: 'Spades', originalDeckPosition: 38 }),
   Object ({ value: 13, name: 'King', suit: 'Spades', originalDeckPosition: 39 }),
-  Object ({ value: 1, name: 'Ace', suit: 'Clubs', originalDeckPosition: 40 }),
-  Object ({ value: 2, name: 'Two', suit: 'Clubs', originalDeckPosition: 41 }),
-  Object ({ value: 3, name: 'Three', suit: 'Clubs', originalDeckPosition: 42 }),
-  Object ({ value: 4, name: 'Four', suit: 'Clubs', originalDeckPosition: 43 }),
-  Object ({ value: 5, name: 'Five', suit: 'Clubs', originalDeckPosition: 44 }),
-  Object ({ value: 6, name: 'Six', suit: 'Clubs', originalDeckPosition: 45 }),
-  Object ({ value: 7, name: 'Seven', suit: 'Clubs', originalDeckPosition: 46 }),
-  Object ({ value: 8, name: 'Eight', suit: 'Clubs', originalDeckPosition: 47 }),
-  Object ({ value: 9, name: 'Nine', suit: 'Clubs', originalDeckPosition: 48 }),
-  Object ({ value: 10, name: 'Ten', suit: 'Clubs', originalDeckPosition: 49 }),
-  Object ({ value: 11, name: 'Jack', suit: 'Clubs', originalDeckPosition: 50 }),
-  Object ({ value: 12, name: 'Queen', suit: 'Clubs', originalDeckPosition: 51 }),
-  Object ({ value: 13, name: 'King', suit: 'Clubs', originalDeckPosition: 52 })
+  Object ({ value: 1, name: 'Ace', suit: 'Diamonds', originalDeckPosition: 40 }),
+  Object ({ value: 2, name: 'Two', suit: 'Diamonds', originalDeckPosition: 41 }),
+  Object ({ value: 3, name: 'Three', suit: 'Diamonds', originalDeckPosition: 42 }),
+  Object ({ value: 4, name: 'Four', suit: 'Diamonds', originalDeckPosition: 43 }),
+  Object ({ value: 5, name: 'Five', suit: 'Diamonds', originalDeckPosition: 44 }),
+  Object ({ value: 6, name: 'Six', suit: 'Diamonds', originalDeckPosition: 45 }),
+  Object ({ value: 7, name: 'Seven', suit: 'Diamonds', originalDeckPosition: 46 }),
+  Object ({ value: 8, name: 'Eight', suit: 'Diamonds', originalDeckPosition: 47 }),
+  Object ({ value: 9, name: 'Nine', suit: 'Diamonds', originalDeckPosition: 48 }),
+  Object ({ value: 10, name: 'Ten', suit: 'Diamonds', originalDeckPosition: 49 }),
+  Object ({ value: 11, name: 'Jack', suit: 'Diamonds', originalDeckPosition: 50 }),
+  Object ({ value: 12, name: 'Queen', suit: 'Diamonds', originalDeckPosition: 51 }),
+  Object ({ value: 13, name: 'King', suit: 'Diamonds', originalDeckPosition: 52 })
   ];
 };

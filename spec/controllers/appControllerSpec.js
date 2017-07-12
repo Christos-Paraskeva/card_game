@@ -95,7 +95,7 @@ describe('AppController', function() {
     });
   });
 
-  describe('when shuffling cards', function() {
+  describe('when shuffling the deck', function() {
 
     beforeEach(function(){
       appController.currentDeck = minimizedTestDeck();

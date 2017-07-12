@@ -7,22 +7,28 @@ function Shuffle() {
 Shuffle.prototype = {
   defaultShuffle: function (deck) {
     var i = 0;
-    var j = 0;
+    var r = 0;
     var temp = null;
 
-    while (this.correctShuffle === false) {
+    if (deck.length !== 0) {
+      while (this.correctShuffle === false) {
 
-      for (i = deck.length - 1; i > 0; i -= 1) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = deck [i];
-        deck[i] = deck[j];
-        deck[j] = temp;
+        for (i = deck.length - 1; i > 0; i -= 1) {
+          r = Math.floor(Math.random() * (i + 1));
+          temp = deck [i];
+          deck[i] = deck[r];
+          deck[r] = temp;
+        }
+        this._validateCorrectShuffle(deck);
       }
-      this._validateCorrectShuffle(deck);
+    return deck;
     }
-  return deck;
-  },
 
+    else {
+      throw new Error("Cannot shuffle: there is no deck");
+    }
+  },
+  
   _validateCorrectShuffle: function (deck) {
     var confirmedCardSequence = false;
 

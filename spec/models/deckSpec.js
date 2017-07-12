@@ -26,19 +26,19 @@ describe('Deck', function() {
       formattedDeck = formatArrayStructure(deck.createDeck('standard'));
     });
 
-    it('card name is defined', function() {
+    it("card name is defined", function() {
       expect(formattedDeck[0][0]).toBeDefined();
     });
 
-    it('card suit type is defined', function() {
+    it("card suit type is defined", function() {
       expect(formattedDeck[0][1]).toBeDefined();
     });
 
-    it('card value is defined', function() {
+    it("card value is defined", function() {
       expect(formattedDeck[0][2]).toBeDefined();
     });
 
-    it('original deck position of card is defined', function() {
+    it("original deck position of card is defined", function() {
       expect(formattedDeck[0][3]).toBeDefined();
     });
 
@@ -53,12 +53,8 @@ describe('Deck', function() {
 
   describe('edge cases', function() {
 
-    beforeEach(function() {
-      deck.cards = [];
-    });
-
-    it('must specify type of deck', function() {
-      expect(formatArrayStructure(deck.createDeck())).toEqual([]);
+    it("throws an error a if valid type of deck isn't specified", function() {
+      expect(deck.createDeck.bind(null)).toThrow(new Error("Must specify valid deck type"));
     });
   });
 });

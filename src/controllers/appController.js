@@ -17,15 +17,19 @@ AppController.prototype = {
   currentPlayerCount: function() {
     return this.currentPlayers.length;
   },
+
   createNewDeck: function(type) {
     this.currentDeck = this.deck.createDeck(type);
   },
+
   showCurrentDeck: function() {
     return this.currentDeck;
   },
+
   shuffleCards: function() {
     this.dealer.shuffleTheDeck(this.currentDeck);
   },
+
   dealCardsToPlayers: function(howManyCards) {
     this.dealer.dealTheCards(howManyCards, this.currentPlayers, this.currentDeck);
   }
