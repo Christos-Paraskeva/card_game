@@ -1,3 +1,41 @@
+## Technologies
+
+This application is built with:
+- Javascript
+
+And tested with:
+- Jasmine
+
+## How to use
+
+- Clone this repo
+- Once the repo has been cloned, go to project root
+- Open SpecRunner.html to run the tests
+- Open index.html in Chrome and use the console
+
+**Useful information:**
+
+The init.js is loaded when the index.html page is opened, and it recreates the following conditions:
+
+- Creates a deck of 52 cards, comprised of 4 suits (hearts, clubs, spades and diamonds) each with 13 values (Ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen and king)
+- There are four players waiting to play around a table
+- The deck arrives in perfect sequence (so, ace of hearts is at the bottom, two of hearts is next, etc. all the way up to king of diamonds on the top)
+- The deck that, is in sequence, is shuffled so that no two cards are still in sequence.
+- Seven cards are then dealt to each player (one card to the each player, then a second card to each player, and so on)
+
+screenshot here
+
+To clear this and start fresh, create a new instance of the AppController:
+
+```
+appController = new Controller();
+```
+
+## Approach
+
+I began by spending some time visualising the structure of the application.  I also broke up the task into small user stories, and initially just focussed on the core functionality of the application specified in the instructions.  
+
+### User stories for features
 ```
 Core Game
 
@@ -48,3 +86,35 @@ As a player
 So that I can play a different type of game
 I would like to be able to specify how many cards are to be dealt to each player
 ```
+
+Afterwards, I added some extra user stories which I felt would lend itself to a more functional and modular / extensible application.  Below is a basic sketch of how I wanted the application to be designed.
+
+insert picture here
+
+I was debating how many different classes seemed logical for the different components of the application, and I knew early on that I wanted to keep these models separate from each other.  I eventually decided that it made more sense for me to follow an MVC type structure, where the controller would be responsible for delegating / calling upon the models to carry out the task and deal with the more complex logic.  Given that this was designed to be a command line application, I have no intention to implement the ‘view’ component of the MVC structure.  However, I feel designing the application in this way, would allow a front-end to be added in the future without much fuss.
+
+Debating how many different classes seemed logical for the different components of the game.  I didn’t want to expose too much to any particular model, and eventually decided that it made more sense for me to follow an MVC structure where the controller would be responsible for delegating simple tasks to the models, which then dealt with the more complex logic.  With this structure, I feel that each model had a simple / single responsibility, and my aim was to make sure that nothing, apart from the Controller, depended too much on different components of the application, allowing for better extensibility if something was going to be changed or added in the future.
+
+Now that I was happy with how the application would be structured, I began setting up the project and started coding.
+
+I began by setting up the Jasmine testing suite, and then writing a small test to check for whether the Player class existed.  This small test failed, and I then moved on to making it pass.  This is the same approach I used throughout the whole project.
+
+## Struggles & Successes
+
+- Testing the Deck class:
+
+Testing my loop created a correct set of cards was not something I could do without separating any reliability on the Card class.  The createDeck method returned an array of Card objects, which I could not find a way of testing directly.  I felt the most sensible solution was to create an algorithm within a specHelper file that would convert the array of objects to a simple array or arrays containing values, which can then easily be compared to another converted array to determine if the order is correct.  The reason I have listed this as a struggle as I’m still not completely satisfied this is the correct way of going about testing something like this.
+
+- Implementing the shuffling:
+
+Spent some time thinking about how to implement the shuffling.  Implemented an algorithm based on the Fisher–Yates Shuffle, which, starting from the back, goes through each index and swaps it with a random number from a pool that gets smaller on the subsequent loops.  Making sure no two cards were still in sequence was where I spent some time trying a couple of different solutions.   
+
+- Creating a new array to deal with order
+
+Validating after every move that something wasn’t moving into a sequence (r), or moving back into a sequence (i).
+
+Neither of these were successful and I eventually decided that manually moving cards that fell back into sequence seemed to be inconsistent with a ‘random’ shuffle.  I decided to add an extra integer property to each card that would allow me to keep track of its original position in the deck.  Using this, the deck of cards will be checked after each shuffle to make sure nothing was in sequence, and if it was, the shuffle will be performed again.  My main concerns about this are the efficiency of potentially performing the shuffle repeatedly but, given the size of the deck array, I felt this was not much of a problem for this specific use case.  It also had the upside, at least in my mind, that nothing was being manually moved around during the shuffle.
+
+- Thoroughly tested all components
+
+- Isolated the testing for the models and controller with doubles
