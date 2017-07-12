@@ -111,10 +111,10 @@ Spent some time thinking about how to implement the shuffling.  Implemented an a
 
 #### Creating a new array to deal with order
 
-Validating after every move that something wasn’t moving into a sequence (r), or moving back into a sequence (i).
+#### Validating after every move that something wasn’t moving into a sequence (r), or moving back into a sequence (i):
 
 Neither of these were successful and I eventually decided that manually moving cards that fell back into sequence seemed to be inconsistent with a ‘random’ shuffle.  I decided to add an extra integer property to each card that would allow me to keep track of its original position in the deck.  Using this, the deck of cards will be checked after each shuffle to make sure nothing was in sequence, and if it was, the shuffle will be performed again.  My main concerns about this are the efficiency of potentially performing the shuffle repeatedly but, given the size of the deck array, I felt this was not much of a problem for this specific use case.  It also had the upside, at least in my mind, that nothing was being manually moved around during the shuffle.
 
-#### Thoroughly tested all components
+### Thoroughly tested all components
 
-#### Isolated the testing for the models and controller with doubles
+### Isolated the testing for the models and controller with doubles
