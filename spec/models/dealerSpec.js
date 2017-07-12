@@ -25,7 +25,7 @@ var shuffleDouble = new ShuffleDouble();
 describe('Dealer', function() {
   var dealer = new Dealer(shuffleDouble);
 
-  it("exists", function(){
+  it("exists", function() {
     expect(dealer).toBeDefined();
   });
 
@@ -35,7 +35,7 @@ describe('Dealer', function() {
       expect(dealer.currentPlayers).toBeDefined();
     });
 
-    it("an instance of 'Shuffle'", function(){
+    it("an instance of 'Shuffle'", function() {
       expect(dealer.shuffle instanceof ShuffleDouble).toBe(true);
     });
   });
@@ -59,7 +59,7 @@ describe('Dealer', function() {
       expect(dealer.currentPlayers[3].cardsHeld.length).toEqual(7);
     });
 
-    describe("edge cases", function(){
+    describe("edge cases", function() {
       it("throws an error when there are not enough cards to be dealt to the players", function() {
         expect(dealer.dealTheCards.bind(null, 14, currentPlayersDouble, correctSequenceDeck())).toThrow(new Error("Cannot deal: not enough cards or players"));
       });

@@ -5,7 +5,7 @@ function Shuffle() {
 }
 
 Shuffle.prototype = {
-  defaultShuffle: function (deck) {
+  defaultShuffle: function(deck) {
     var i = 0;
     var r = 0;
     var temp = null;
@@ -28,8 +28,8 @@ Shuffle.prototype = {
       throw new Error("Cannot shuffle: there is no deck");
     }
   },
-  
-  _validateCorrectShuffle: function (deck) {
+
+  _validateCorrectShuffle: function(deck) {
     var confirmedCardSequence = false;
 
     for (i=0; i < deck.length - 1; i++) {

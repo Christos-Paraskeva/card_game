@@ -35,7 +35,7 @@ DealerDouble.prototype = {
   dealTheCards: function (howManyCards, players, deck) {
     this.currentPlayers = players;
   },
-  shuffleTheDeck: function (deck) {
+  shuffleTheDeck: function(deck) {
      return 'test deck received';
   }
 };
@@ -50,7 +50,7 @@ var testDeck = deckDouble.createDeck();
 describe('AppController', function() {
   var appController = new AppController(playerDouble, deckDouble, dealerDouble);
 
-  it("exists", function(){
+  it("exists", function() {
     expect(appController).toBeDefined();
   });
 
@@ -64,22 +64,22 @@ describe('AppController', function() {
       expect(appController.currentPlayers).toEqual([]);
     });
 
-    it("an instance of 'Player'", function(){
+    it("an instance of 'Player'", function() {
       expect(appController.player instanceof PlayerDouble).toBe(true);
     });
 
-    it("an instance of 'Deck'", function(){
+    it("an instance of 'Deck'", function() {
       expect(appController.deck instanceof DeckDouble).toBe(true);
     });
 
-    it("an instance of 'Dealer'", function(){
+    it("an instance of 'Dealer'", function() {
       expect(appController.dealer instanceof DealerDouble).toBe(true);
     });
   });
 
   describe('when adding a player', function() {
 
-    afterEach(function(){
+    afterEach(function() {
       appController.currentPlayers = [];
     });
 
@@ -97,7 +97,7 @@ describe('AppController', function() {
 
   describe('when shuffling the deck', function() {
 
-    beforeEach(function(){
+    beforeEach(function() {
       appController.currentDeck = minimizedTestDeck();
     });
 
@@ -115,12 +115,12 @@ describe('AppController', function() {
 
   describe('when dealing cards out', function() {
 
-    beforeEach(function(){
+    beforeEach(function() {
       appController.currentPlayers = currentPlayersDouble;
       appController.currentDeck = testDeck;
     });
 
-    afterEach(function(){
+    afterEach(function() {
       appController.currentPlayers = [];
     });
 
@@ -151,13 +151,13 @@ describe('AppController', function() {
     });
   });
 
-  it("can show how many current players there are", function(){
+  it("can show how many current players there are", function() {
     appController.addPlayer();
     appController.addPlayer();
     expect(appController.currentPlayerCount()).toEqual(2);
   });
 
-  it("can show the current deck of cards in use", function(){
+  it("can show the current deck of cards in use", function() {
     expect(appController.showCurrentDeck()).toEqual(['card 1', 'card 2', 'card 3', 'card 4']);
   });
 

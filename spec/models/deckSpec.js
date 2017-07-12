@@ -1,7 +1,7 @@
 describe('Deck', function() {
   var deck = new Deck();
 
-  it("exists", function(){
+  it("exists", function() {
     expect(deck).toBeDefined();
   });
 
@@ -46,7 +46,7 @@ describe('Deck', function() {
       expect(formattedDeck).toEqual(formatArrayStructure(correctSequenceDeck()));
     });
 
-    it("correct number of cards are created", function(){
+    it("correct number of cards are created", function() {
       expect(formattedDeck.length).toEqual(formatArrayStructure(correctSequenceDeck()).length);
     });
   });

@@ -1,41 +1,41 @@
 describe('Player', function() {
   var player = new Player('Test Name', 1);
 
-  it("exists", function(){
+  it("exists", function() {
     expect(player).toBeDefined();
   });
 
   describe('is initialized with', function() {
 
-    it("a name", function(){
+    it("a name", function() {
       expect(player.name).toEqual('Test Name');
     });
 
-    it("an id", function(){
+    it("an id", function() {
       expect(player.id).toEqual(1);
     });
 
-    it("an empty array for currently held cards", function(){
+    it("an empty array for currently held cards", function() {
       expect(player.cardsHeld).toEqual([]);
     });
   });
 
   describe('can check for', function() {
 
-    it("current player's name", function(){
+    it("current player's name", function() {
       expect(player.getName()).toEqual('Test Name');
     });
 
-    it("current player's id", function(){
+    it("current player's id", function() {
       expect(player.getId()).toEqual(1);
     });
 
-    it("current player's held cards", function(){
+    it("current player's held cards", function() {
       expect(player.showCards()).toEqual([]);
     });
   });
 
-  it("can create a new player", function(){
+  it("can create a new player", function() {
     player.createPlayer('Player Name');
     expect(player instanceof Player).toBe(true);
   });

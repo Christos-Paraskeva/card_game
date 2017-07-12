@@ -6,11 +6,11 @@ function Dealer(shuffle = new Shuffle()) {
 }
 
 Dealer.prototype = {
-  shuffleTheDeck: function (deck) {
+  shuffleTheDeck: function(deck) {
      this.shuffle.defaultShuffle(deck);
   },
 
-  dealTheCards: function (howManyCards, currentPlayers, deck) {
+  dealTheCards: function(howManyCards, currentPlayers, deck) {
     this.currentPlayers = currentPlayers;
 
     if (deck.length - (currentPlayers.length * howManyCards) >= 0 && currentPlayers.length !== 0) {
