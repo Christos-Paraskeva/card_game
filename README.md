@@ -115,3 +115,5 @@ Neither of these were successful and I eventually decided that manually moving c
 ### Thoroughly tested all components
 
 ### Isolated the testing for the models and controller with doubles
+
+### Frequent small commits to Github which allowed me to follow a structured and incremental approach to designing the application
