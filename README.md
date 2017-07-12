@@ -23,7 +23,7 @@ The init.js is loaded when the index.html page is opened, and it recreates the f
 - The deck that, is in sequence, is shuffled so that no two cards are still in sequence.
 - Seven cards are then dealt to each player (one card to the each player, then a second card to each player, and so on)
 
-![alt text](http://imgur.com/a/2dbBS)
+![img](http://imgur.com/a/2dbBS)
 
 To clear this and start fresh, create a new instance of the AppController:
 
