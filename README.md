@@ -104,7 +104,7 @@ Testing my loop created a correct set of cards was not something I could do with
 
 - ### Implementing the shuffling:
 
-Spent some time thinking about how to implement the shuffling.  Implemented an algorithm based on the Fisher–Yates Shuffle, which, starting from the back, goes through each index and swaps it with a random number from a pool that gets smaller on the subsequent loops.  Making sure no two cards were still in sequence was where I spent some time trying a couple of different solutions.   
+I implemented the shuffling function based on the Fisher–Yates Shuffle technique, which, starting from the back, goes through each index and swaps it with a random number from a pool that gets smaller on the subsequent loops.  Making sure no two cards were still in sequence was where I spent some time trying a couple of different solutions.   
 
 - Creating a new array to deal with order
 
