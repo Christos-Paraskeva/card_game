@@ -98,7 +98,7 @@ Now that I was happy with how the application would be structured, I began by se
 
 ## Struggles & Successes
 
-### - Testing the Deck class:
+- ### Testing the Deck class:
 
 Testing my loop created a correct set of cards was not something I could do without separating any reliability on the Card class.  The createDeck method returned an array of Card objects, which I could not find a way of testing directly.  I felt the most sensible solution was to create an algorithm within a specHelper file that would convert the array of objects to a simple array or arrays containing values, which can then easily be compared to another converted array to determine if the order is correct.  The reason I have listed this as a struggle as I’m still not completely satisfied this is the correct way of going about testing something like this.
 
@@ -112,8 +112,8 @@ Spent some time thinking about how to implement the shuffling.  Implemented an a
 
 Neither of these were successful and I eventually decided that manually moving cards that fell back into sequence seemed to be inconsistent with a ‘random’ shuffle.  I decided to add an extra integer property to each card that would allow me to keep track of its original position in the deck.  Using this, the deck of cards will be checked after each shuffle to make sure nothing was in sequence, and if it was, the shuffle will be performed again.  My main concerns about this are the efficiency of potentially performing the shuffle repeatedly but, given the size of the deck array, I felt this was not much of a problem for this specific use case.  It also had the upside, at least in my mind, that nothing was being manually moved around during the shuffle.
 
-### - Thoroughly tested all components
+- ### Thoroughly tested all components
 
-### - Isolated the testing for the models and controller with doubles
+- ### Isolated the testing for the models and controller with doubles
 
-### - Frequent small commits to Github which allowed me to follow a structured and incremental approach to designing the application
+- ### Frequent small commits to Github which allowed me to follow a structured and incremental approach to designing the application
