@@ -12,7 +12,7 @@ And tested with:
 
 - Clone this repo
 - Once the repo has been cloned, go to project root
-- Open SpecRunner.html to run the tests
+- Open SpecRunner.html in Chrome to run the tests
 - Open index.html in Chrome and use the console
 
 **Useful information:**
